@@ -34,6 +34,10 @@ body {
 .row-fluid div {
   margin-bottom: 20px;
 }
+
+.thumbnail p {
+  margin: 0;
+}
 </style>
 </head>
 <body>
@@ -49,14 +53,15 @@ body {
     <hr>
     
     <div class="jumbotron">
-      <h1>Enjoy these beautiful photos!</h1>
+      <h1>What's happening in photos</h1>
       <p class="lead">See more of what you like by personalizing the photo wall based on your interests.</p>
-      <a class="btn btn-large btn-success" href="#" onclick="personalize();">Personalize</a>
+      <a class="btn btn-large btn-success" href="#" onclick="personalize(); return false;">Personalize</a>
     </div>
 
     <hr>
     
-    <div id="photos" class="row-fluid"></div>
+    <div id="content">
+    </div>
   </div> <!-- /container -->
     
   <!-- console modal -->
@@ -75,14 +80,14 @@ body {
         <div class="tab-pane active" id="tabtop">
           <p>Returns the <em>n</em> strongest interests the user holds.</p>
           
-          <p><code>int n</code> <input type="text" id="count" value="5" width="5"/>
-          <button class="btn btn-primary" type="button" onclick="consoleTop();">Run</button></p>
+          <p><form class="form-inline"><code>int n</code> <input type="text" id="count" value="5" width="5"/>
+          <button class="btn btn-primary" type="button" onclick="consoleTop();">Run</button></form></p>
         </div>
         <div class="tab-pane" id="tabquery">
           <p>Returns match information for the one or more specified interests.</p>
           
-          <p><code>string interest</code> <input type="text" id="query" value="sports, cars"/>
-          <button class="btn btn-primary" type="button" onclick="consoleQuery();">Run</button></p>
+          <p><form class="form-inline"><code>string interest</code> <input type="text" id="query" value="sports, cars"/>
+          <button class="btn btn-primary" type="button" onclick="consoleQuery();">Run</button></form></p>
         </div>
       </div>
       <br/>
@@ -98,11 +103,12 @@ body {
   <div id="error" class="modal alert alert-block alert-error fade hide">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <h4 class="alert-heading">Your browser doesn't support interests.</h4>
-    <p>You must be using a <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/try-builds/edward.lee@engineering.uiuc.edu-5d43598c48f6/" target="_blank">special build of Firefox</a> for this demo site to work. Be sure the User Profile add-on is enabled, too!</p>
+    <p>You must be using a <a href="http://people.mozilla.com/~elee/user-profile" target="_blank">special build of Firefox</a> for this demo site to work. Be sure the User Profile add-on is enabled, too!</p>
   </div>
 
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/masonry.js"></script>
   <script src="demo.js"></script>
 </body>
 </html>
