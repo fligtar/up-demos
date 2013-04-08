@@ -1,4 +1,1 @@
-up-demos
-========
-
-UP Demos
+Demos for Project UP. shhh
