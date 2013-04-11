@@ -2,7 +2,7 @@ var interests = [];
 
 function personalize() {
   if (typeof navigator.interests != 'undefined') {
-    navigator.interests.getTopInterests().then(populateInterests);
+    navigator.interests.getTopInterests(5).then(populateInterests);
   }
   else {
     $("#error").modal('show');
@@ -12,7 +12,7 @@ function personalize() {
 function consoleTop() {
     if (typeof navigator.interests != 'undefined') {
       $('#output').html('');
-      var num = $("#count").val();
+      var num = parseInt($("#count").val());
       navigator.interests.getTopInterests(num).then(consoleUpdateInterests);
     }
     else {
