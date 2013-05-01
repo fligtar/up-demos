@@ -24,7 +24,7 @@ function consoleQuery() {
     if (typeof navigator.interests != 'undefined') {
       $('#output').html('');
       var ints = $("#query").val().split(", ");
-      navigator.interests.checkInterests(ints).then(consoleUpdateInterests);
+      navigator.interests.getInterests(ints).then(consoleUpdateInterests);
     }
     else {
       $("#error").modal('show');
