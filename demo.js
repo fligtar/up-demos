@@ -81,7 +81,7 @@ function addPhotosToWall(data) {
 }
 
 function getPostsByTag(tag, int_num) {
-    $('body').append('<script src="http://api.tumblr.com/v2/tagged?tag=' + tag + '&filter=text&&api_key=AOiwk96Nu7FpdEMEFkDAal0A8bhvsFJquJh2XNLh1RcNOl6shp&callback=jsonpInterest(' + int_num + ')"></script>');
+    $('body').append('<script src="http://api.tumblr.com/v2/tagged?tag=' + tag + '&filter=text&&api_key=AOiwk96Nu7FpdEMEFkDAal0A8bhvsFJquJh2XNLh1RcNOl6shp&callback=jsonpInterest' + int_num + '"></script>');
 }
 
 function addPosts(data, int_num) {
@@ -94,7 +94,12 @@ function addPosts(data, int_num) {
     ul.imagesLoaded( function() { ul.masonry(); });
 }
 
-function jsonpInterest(num) { return function(data) { addPosts(data, num); } }
+function jsonpInterest1(data) { addPosts(data, 1); }
+function jsonpInterest2(data) { addPosts(data, 2); }
+function jsonpInterest3(data) { addPosts(data, 3); }
+function jsonpInterest4(data) { addPosts(data, 4); }
+function jsonpInterest5(data) { addPosts(data, 5); }
+
 
 function clearWall() {
   $("#content").html("");
